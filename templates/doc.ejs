@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=filename%></title>
+  <meta charset="utf-8" />
+  <script src="assets/prettify.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/doxco.css" />
+  <style>
+  </style>
+</head>
+<body>
+<div id="container">
+  <div id="background"></div>
+  <table>
+    <tr>
+      <th class="docs"><h1><%=filename%></h1></th><th class="code"></th>
+    </tr>
+  <% comments.forEach(function (comment, i) { %>
+    <tr id="section-<%= i + 1%>">
+      <td class="docs">
+        <%-comment.description.full%>
+      </td>
+      <td class="code"><pre class="prettyprint"><%-comment.code%></pre></td>
+    </tr>
+  <% });%>
+  </table>
+</div>
+<script>
+  var codes = document.querySelectorAll('pre');
+  for (var i = 0; i < codes.length; i++) {
+    codes[i].className = 'prettyprint';
+  }
+  prettyPrint();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+var program = require('commander'),
+  fs = require('fs'),
+  path = require('path'),
+  docco = require('../');
+
+program
+  .version(docco.version)
+  .option('-o, --output <folder>', 'which folder to output.')
+  .option('-i, --input <folder>', 'where is the package.')
+  .option('-s, --skin <folder>', 'where is the skin.', 'default');
+
+program.on('--help', function(){
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ docco -i <folder>');
+  console.log('');
+});
+
+// parse argv
+program.parse(process.argv);
+
+if (!program.input) {
+  console.log('$ docco -i <folder> [-o <folder>]');
+}
+
+if (!program.output) {
+  program.output = path.resolve('doc');
+}
+
+program.output = path.resolve(program.output);
+
+var docPath = program.output;
+var docExists = fs.existsSync(docPath);
+if (!docExists) {
+  fs.mkdirSync(docPath, '0777');
+}
+
+// process stdin
+docco.run(program.input, program.output, program.skin);

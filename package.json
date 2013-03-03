@@ -1,0 +1,32 @@
+{
+  "name": "doxco",
+  "version": "0.0.1",
+  "description": "doxco =====",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JacksonTian/doxco.git"
+  },
+  "keywords": [
+    "Dox",
+    "doxco"
+  ],
+  "dependencies": {
+    "commander": "1.1.1",
+    "dox": "0.4.2",
+    "ejs": "0.8.3",
+    "marked": "0.2.8",
+    "ncp": "0.4.0"
+  },
+  "devDependencies": {
+    "should": "*",
+    "mocha": "*"
+  },
+  "author": "Jackson Tian",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "251f10237264140e81e56014109b5f88cd939757"
+}
