@@ -1,7 +1,7 @@
 {
   "name": "doxco",
   "version": "0.0.1",
-  "description": "doxco =====",
+  "description": "documentation generator",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec"
@@ -14,6 +14,9 @@
     "Dox",
     "doxco"
   ],
+  "bin": {
+    "doxco": "./bin/doxco"
+  },
   "dependencies": {
     "commander": "1.1.1",
     "dox": "0.4.2",
