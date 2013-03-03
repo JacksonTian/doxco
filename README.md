@@ -1,4 +1,4 @@
-Doxco 源码注解文档生成工具
+Doxco 源码注解文档生成工具 [![Build Status](https://secure.travis-ci.org/JacksonTian/doxco.png?branch=master)](http://travis-ci.org/JacksonTian/doxco)
 =====
 
 ## Installation
