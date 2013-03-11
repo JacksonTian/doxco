@@ -4,7 +4,7 @@ Doxco 源码注解文档生成工具 [![Build Status](https://secure.travis-ci.o
 ## Installation
 Use following command install doxco as global tool.
 ```
-[sodu] npm install doxco -g
+[sudo] npm install doxco -g
 ```
 
 ## Usage
