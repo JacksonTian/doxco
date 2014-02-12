@@ -7,13 +7,12 @@ var program = require('commander'),
 program
   .version(docco.version)
   .option('-o, --output <folder>', 'which folder to output.')
-  .option('-i, --input <folder>', 'where is the package.')
-  .option('-s, --skin <folder>', 'where is the skin.', 'default');
+  .option('-i, --input <file>', 'where is the JavaScript file.');
 
 program.on('--help', function(){
   console.log('  Examples:');
   console.log('');
-  console.log('    $ docco -i <folder>');
+  console.log('    $ doxco -i <file> -o <output folder>');
   console.log('');
 });
 
@@ -21,7 +20,8 @@ program.on('--help', function(){
 program.parse(process.argv);
 
 if (!program.input) {
-  console.log('$ docco -i <folder> [-o <folder>]');
+  console.log(program.helpInformation());
+  process.exit(1);
 }
 
 if (!program.output) {
@@ -37,4 +37,4 @@ if (!docExists) {
 }
 
 // process stdin
-docco.run(program.input, program.output, program.skin);
+docco.run(program.input, program.output);
