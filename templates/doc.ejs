@@ -3,32 +3,36 @@
 <head>
   <title><%=filename%></title>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <script src="assets/prettify.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/doxco.css" />
 </head>
 <body>
 <div id="container">
   <div id="background"></div>
-  <table>
-    <tr>
-      <th class="docs"><h1><%=filename%></h1></th><th class="code"></th>
-    </tr>
+  <ul class="sections">
+    <li id="title">
+      <div class="docs">
+        <h1><%= filename %></h1>
+      </div>
+    </li>
   <% comments.forEach(function (comment, i) { %>
-    <tr id="section-<%= i + 1%>">
-      <td class="docs">
+    <li id="section-<%= i + 1%>">
+      <div class="docs">
+        <% var heading = comment.description.full.match(/^\s*<(h\d)>/) %>
+        <div class="pilwrap <%= heading ? 'for-' + heading[1] : '' %>">
+          <a href="#section-<%= i + 1%>" class="pilcrow">&#182;</a>
+        </div>
         <%-comment.description.full%>
-      </td>
-      <td class="code"><pre class="prettyprint"><%-comment.code%></pre></td>
-    </tr>
+      </div>
+      <% if (comment.code) { %>
+      <div class="code">
+        <pre><%-comment.code%></pre>
+      </div>
+      <% } %>
+    </li>
   <% });%>
-  </table>
+  </ul>
 </div>
-<script>
-  var codes = document.querySelectorAll('pre');
-  for (var i = 0; i < codes.length; i++) {
-    codes[i].className = 'prettyprint';
-  }
-  prettyPrint();
-</script>
 </body>
 </html>
