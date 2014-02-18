@@ -4,8 +4,8 @@
   <title><%=filename%></title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-  <script src="assets/prettify.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/doxco.css" />
+  <link rel="stylesheet" type="text/css" href="assets/github.css" />
 </head>
 <body>
 <div id="container">
@@ -27,7 +27,7 @@
       </div>
       <% if (comment.code) { %>
       <div class="code">
-        <pre><%-comment.code%></pre>
+        <pre><%-hljs.highlightAuto(comment.code).value%></pre>
       </div>
       <% } %>
     </li>

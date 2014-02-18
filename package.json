@@ -1,6 +1,6 @@
 {
   "name": "doxco",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "documentation generator",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "commander": "1.1.1",
-    "dox": "0.4.2",
+    "dox": "0.4.4",
     "ejs": "0.8.3",
     "marked": "0.2.8",
     "ncp": "0.4.0"
@@ -30,6 +30,5 @@
   },
   "author": "Jackson Tian",
   "license": "MIT",
-  "readmeFilename": "README.md",
-  "gitHead": "251f10237264140e81e56014109b5f88cd939757"
+  "readmeFilename": "README.md"
 }
