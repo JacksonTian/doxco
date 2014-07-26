@@ -1,6 +1,6 @@
 {
   "name": "doxco",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "documentation generator",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "commander": "1.1.1",
-    "dox": "0.4.4",
-    "ejs": "0.8.3",
+    "dox": "0.4.6",
+    "ejs": "1.0.0",
     "marked": "0.2.8",
     "ncp": "0.4.0",
     "highlight.js": "8.0.0"
