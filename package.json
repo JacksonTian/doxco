@@ -1,6 +1,6 @@
 {
   "name": "doxco",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "documentation generator",
   "main": "index.js",
   "scripts": {
